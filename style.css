@@ -18,6 +18,11 @@ body {
     color: var(--primary-text-color);
 }
 
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
 p {
     font-family: "Roboto", sans-serif;
     color: var(--secondary-text-color);
@@ -53,6 +58,11 @@ nav {
     right: 0;
 }
 
+.dark-mode nav {
+    background-color: #03346E;
+    box-shadow: 0 0 4px #333;
+}
+
 .main-nav{
     justify-content: space-between;
     padding-block: 8px;
@@ -75,6 +85,10 @@ nav {
 }
 
 .hover-link:active{
+    color: red;
+}
+
+body.dark-mode.hover-link:active{
     color: red;
 }
 
@@ -110,6 +124,12 @@ nav {
     background-color: var(--accent-color-dark);
 }
 
+#icon{
+    width: 30px;    
+    cursor: pointer;
+}
+
+
 main{
     padding-block: 20px;
     margin-top: 100px;
@@ -130,12 +150,22 @@ main{
     cursor: pointer;
     background-color: #fff;
     overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover{
-    box-shadow: 1px 1px 8px #d4ecff;
+.card:hover {
+    transform: scale(1.05); 
+    box-shadow: 1px 1px 12px #d4ecff;
     background-color: #f9fdff;
-    transform: translateY(-2px);
+}
+
+.dark-mode .card {
+    background-color: #1e1e1e;
+    box-shadow: 0 0 4px #333;
+}
+
+.dark-mode .card:hover {
+    background-color: #2a2a2a;
 }
 
 .card-header img{
@@ -150,4 +180,25 @@ main{
 
 .news-source{
     margin-block: 12px;
+}
+
+.news-desc {
+    color:var(--secondary-text-color) ; 
+}
+
+body.dark-mode .news-desc {
+    color:#bbd0e2;
+}
+
+
+.dark-mode .search-input,
+.dark-mode .search-button {
+    background-color: #07a4c3;
+    border: 2px solid black;
+    color: #e0e0e0;
+}
+
+.dark-mode .hover-link:hover,
+.dark-mode .nav-item.active {
+    color: #bb86fc;
 }

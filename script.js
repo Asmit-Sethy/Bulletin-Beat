@@ -106,3 +106,19 @@ searchButton.addEventListener('click', () => {
     const navItems = document.querySelectorAll(".nav-item");
     navItems.forEach(item => item.classList.remove("active"));
 });
+
+function toggleTheme() {
+    const body = document.body;
+    const themeIcon = document.getElementById('theme-icon');
+
+    body.classList.toggle('dark-mode');
+
+    // Switch the icon and tooltip
+    if (body.classList.contains('dark-mode')) {
+        themeIcon.src = "sun.png";  // Change to the sun icon
+        themeIcon.alt = "Switch to Light Mode";
+    } else {
+        themeIcon.src = "moon.png";  // Change to the moon icon
+        themeIcon.alt = "Switch to Dark Mode";
+    }
+}
